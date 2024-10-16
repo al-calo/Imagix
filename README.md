@@ -14,9 +14,7 @@ Esta plataforma optimiza la gestión de ideas y retos empresariales, mejorando l
 - **Base de Datos Centralizada:** Toda la información se almacena en una base de datos accesible desde cualquier sede.
 
 ## Tecnologías Utilizadas
-- **Frontend:** Angular / React
-- **Backend:** Node.js / Spring Boot
-- **Base de Datos:** PostgreSQL / MySQL
-- **Autenticación:** OAuth / JWT
+- **Frontend:** HTML
+- **Backend:** Spring Boot
+- **Base de Datos:** H2
 - **Notificaciones:** SMTP para correos electrónicos
-- **Infraestructura:** Despliegue en AWS, Azure o GCP
