@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  position: relative;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-bottom: 5px solid #00a3d8;
+}
+.logo img {
+  width: 50%;
+}
+header ul {
+  list-style-type: none;
+  display: flex;
+}
+header ul li {
+  margin: 0 15px;
+}
+header ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+.login button {
+  padding: 10px 20px;
+  background-color: #a5e24d;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.Secciones {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+.Seccion {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.Seccion p {
+  text-align: justify;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  margin-top: 30px;
+}
+footer {
+  display: flex;
+  border-top: 5px solid #00a3d8;
+  align-items: center;
+  justify-content: space-between;
+}
+footer img {
+  height: 10vh;
+}
+#contact {
+  display: flex;
+  flex-direction: column; /* Muestra el contenido en columna */
+  justify-content: center;
+  align-items: flex-start; /* Alinea a la izquierda */
+}
+#contact p {
+  margin: 5px 0;
+  color: black;
+}
+.Seccion-Verde {
+  background-color: #b5e484;
+  display: flex;
+  align-items: center; /* Alinea verticalmente si es necesario */
+  border-radius: 20px;
+  padding: 20px;
+}
+.Seccion-Verde img {
+  width: 30%; /* Ajusta el tamaño de las imágenes */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px;
+}
+.texto {
+  flex: 1; /* Ocupa el espacio restante a la derecha */
+  color: white;
+}
+.Seccion-Morada {
+  background-color: #8663b3;
+  display: flex;
+  align-items: center; /* Alinea verticalmente si es necesario */
+  border-radius: 20px;
+  padding: 20px;
+}
+.Seccion-Morada img {
+  width: 30%; /* Ajusta el tamaño de las imágenes */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px;
+}
+.Seccion-Rosa {
+  background-color: #e96877;
+  display: flex;
+  align-items: center; /* Alinea verticalmente si es necesario */
+  border-radius: 20px;
+  padding: 20px;
+}
+.Seccion-Rosa img {
+  width: 30%; /* Ajusta el tamaño de las imágenes */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px;
+}
+.Secciones h2 {
+  background-color: white;
+  color: #333;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
