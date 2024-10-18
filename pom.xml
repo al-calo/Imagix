@@ -60,6 +60,12 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
+		<dependency>
+		<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.3</version> <!-- Asegúrate de usar la última versión disponible -->
+		</dependency>
+
 	</dependencies>
 
 	<build>
