@@ -3,6 +3,8 @@ package com.example.demo.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Promotor {
@@ -13,10 +15,16 @@ public class Promotor {
 
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "cargo_id")
     private Cargo cargo;
 
+    @ManyToOne
+    @JoinColumn(name = "gerencia_id")
     private Gerencia gerencia;
 
+    @ManyToOne
+    @JoinColumn(name = "regional_id")
     private Regional regional;
 
     public Promotor() {
