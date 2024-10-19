@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -16,7 +17,7 @@ public class Regional {
 
     private String nombre;
 
-    @OneToMany
+    @OneToMany(mappedBy = "regional", cascade = CascadeType.ALL)
     private List<Promotor> promotores;
 
     public Regional() {

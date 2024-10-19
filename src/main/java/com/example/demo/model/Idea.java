@@ -3,6 +3,7 @@ package com.example.demo.model;
 import java.sql.Date;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -23,7 +24,7 @@ public class Idea {
 
     private String nombre;
 
-    @OneToMany
+    @OneToMany(mappedBy = "idea", cascade = CascadeType.ALL)
     private List<Proponente> proponentes;
 
     public Idea() {

@@ -30,6 +30,10 @@ public class Proponente {
     private Cargo cargo;
     private Long telefono;
 
+    @ManyToOne
+    @JoinColumn(name = "idea_id")
+    private Idea idea;
+
     public Proponente() {
     }
 
