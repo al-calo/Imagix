@@ -25,7 +25,8 @@ body {
 }
 
 .sidebar {
-    background-color: #d7e6b0;
+    border: 1px solid #5bbec0;
+    background-color: #5bbec0 ;
     width: 250px;
     padding: 30px;
     display: flex;

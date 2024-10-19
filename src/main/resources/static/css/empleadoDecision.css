@@ -18,7 +18,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #d7e6b0;
+    border: 1px solid #5bbec0;
+    background-color: #5bbec0 ;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     width: 100%;
@@ -123,7 +124,8 @@ header {
 }
 
 footer {
-    background-color: #d7e6b0;
+    border: 1px solid #5bbec0;
+    background-color: #5bbec0 ;
     padding: 20px;
     text-align: center;
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
