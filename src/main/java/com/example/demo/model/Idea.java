@@ -3,10 +3,12 @@ package com.example.demo.model;
 import java.sql.Date;
 import java.util.List;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
+@Entity
 public class Idea {
 
     @Id
@@ -24,11 +26,11 @@ public class Idea {
     @OneToMany
     private List<Proponente> proponentes;
 
-    public Idea(){
+    public Idea() {
 
     }
 
-    public Idea(String descripcionIdea, String descripcionProblema, Date fecha, String nombre){
+    public Idea(String descripcionIdea, String descripcionProblema, Date fecha, String nombre) {
         this.descripcionIdea = descripcionIdea;
         this.descripcionProblema = descripcionProblema;
         this.fecha = fecha;
@@ -80,12 +82,12 @@ public class Idea {
         this.nombre = nombre;
     }
 
-    public List<Proponente> getProponentes(){
+    public List<Proponente> getProponentes() {
         return proponentes;
     }
 
-    public void setProponentes(List<Proponente> proponentes){
+    public void setProponentes(List<Proponente> proponentes) {
         this.proponentes = proponentes;
     }
-    
+
 }

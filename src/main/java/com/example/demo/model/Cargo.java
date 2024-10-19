@@ -1,8 +1,13 @@
 package com.example.demo.model;
 
+import java.util.List;
+
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
+@Entity
 public class Cargo {
 
     @Id
@@ -10,6 +15,9 @@ public class Cargo {
     private Long id;
 
     private String nombre;
+
+    @OneToMany
+    private List<Promotor> promotores;
 
     public Cargo() {
     }

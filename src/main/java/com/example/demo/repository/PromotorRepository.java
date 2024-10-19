@@ -3,11 +3,9 @@ package com.example.demo.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.Cargo;
+import com.example.demo.model.Promotor;
 
 @Repository
-public interface CargoRepository extends JpaRepository<Cargo, Long> {
-
-    Cargo findByNombre(String nombre);
+public interface PromotorRepository extends JpaRepository<Promotor, Long> {
 
 }

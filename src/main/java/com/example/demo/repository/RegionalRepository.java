@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.Regional;
 
 @Repository
-public interface RegionalRepository extends JpaRepository<Long, Regional> {
-    
+public interface RegionalRepository extends JpaRepository<Regional, Long> {
+
+    Regional findByNombre(String nombre);
+
 }

@@ -15,6 +15,12 @@ public class Promotor {
 
     private String name;
 
+    private String correo;
+
+    private String clave;
+
+    private String nivel;
+
     @ManyToOne
     @JoinColumn(name = "cargo_id")
     private Cargo cargo;
@@ -75,6 +81,30 @@ public class Promotor {
 
     public void setRegional(Regional regional) {
         this.regional = regional;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
 }
