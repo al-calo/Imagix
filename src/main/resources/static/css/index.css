@@ -27,7 +27,7 @@ main{
 
 h2{
     font-family: "Acme", sans-serif;
-    color: #ddc47d;
+    color: #23265C;
     font-size: 30px;
     margin-bottom: 20px;
 }
@@ -36,7 +36,7 @@ h2{
 /* Header */
 header{
     display: flex;
-    border: 1px solid black;
+    border: 1px solid #5bbec0;
     background-color: #5bbec0 ;
     justify-content: space-between;
     align-items: center;
@@ -224,12 +224,14 @@ main p{
     justify-content: center;
     align-items: center;
     width: 50%;
+    color: #23265C;
     font-family: "Nunito", sans-serif;
 }
 
 #leftServicios h2{
     font-size: 50px;
     margin: 20px;
+    color: #23265C;
     font-family: "Nunito", sans-serif;
 }
 
@@ -318,7 +320,7 @@ main p{
     padding: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #ddc47d;
+    background-color: #23265C;
     border: none;
     border-radius: 12px;
     cursor: pointer; 
@@ -627,7 +629,7 @@ footer{
 
 
 #servicios h2, #misionyvision h2, #nosotros h2, #encuentranos h2, #bienvenida h2 {
-    color:#ddc47d
+    color:#23265C
 }
 /* REDES SOCIALES FOOTER */ 
 .wrapper {
