@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #f7f9fc;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #d7e6b0;
+    width: 250px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-toggle:checked ~ .sidebar {
+    width: 50px;
+}
+
+.menu-toggle:checked ~ .sidebar .logo {
+    display: none; /* Ocultar el logo al colapsar */
+}
+
+/* Navigation */
+nav {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 30px 0; /* Espaciado entre opciones */
+}
+
+nav ul li a {
+    display: flex;
+    flex-direction: column; /* Colocar texto debajo del ícono */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+    gap: 10px; /* Espacio entre ícono y texto */
+}
+
+/* Hover en los enlaces */
+nav ul li a:hover {
+    background-color: #c9ddb1;
+    border-radius: 10px;
+}
+
+/* Tamaño del ícono según estado del sidebar */
+nav ul li a img.nav-icon {
+    width: 120px; /* Icono más grande */
+    height: 120px;
+    transition: width 0.3s, height 0.3s;
+}
+
+.menu-toggle:checked ~ .sidebar nav ul li a img.nav-icon {
+    width: 60px; /* Reducir tamaño al colapsar */
+    height: 60px;
+}
+
+/* Estilo del texto */
+nav ul li a span {
+    font-size: 24px; /* Texto más grande */
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.menu-toggle:checked ~ .sidebar nav ul li a span {
+    opacity: 0; /* Ocultar texto al colapsar */
+    pointer-events: none; /* Evitar interacción */
+}
+
+/* Logo debajo del ícono del menú */
+.logo {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 140px;
+    height: auto;
+}
+
+/* Logout Button */
+.logout {
+    background-color: #a4c639;
+    width: 220px;
+    height: 70px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, width 0.3s, height 0.3s;
+}
+
+.logout img.logout-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.logout:hover {
+    background-color: #8fb52b;
+}
+
+/* Estado colapsado del sidebar */
+.menu-toggle:checked ~ .sidebar .logout {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.menu-toggle:checked ~ .sidebar .logout span.logout-text {
+    display: none; /* Ocultar texto */
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: margin-left 0.3s ease;
+}
+
+.menu-toggle:checked ~ .main-content {
+    margin-left: 50px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-icon {
+    width: 30px;
+    height: auto;
+}
+
+/* Content Section */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.question {
+    font-size: 42px; /* Texto más grande */
+    font-weight: 700;
+    color: #333;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.action-button {
+    background-color: #d7e6b0;
+    border: none;
+    padding: 25px 50px;
+    border-radius: 40px;
+    font-size: 28px; /* Texto más grande */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.action-button:hover {
+    background-color: #c9ddb1;
+    transform: scale(1.05); /* Efecto hover */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.question {
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px; /* Espacio entre la pregunta y los botones */
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los botones */
+    align-items: center;
+}
+

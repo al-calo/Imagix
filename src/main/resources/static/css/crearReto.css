@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #f7f9fc;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Evita scroll innecesario */
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #d7e6b0;
+    width: 250px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-toggle:checked ~ .sidebar {
+    width: 50px;
+}
+
+.menu-toggle:checked ~ .sidebar .logo {
+    display: none;
+}
+
+.logo {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 110px;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:checked ~ .sidebar .logo img {
+    width: 60px; /* Ajusta el logo al contraerse */
+}
+
+/* Navigation */
+nav {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+    gap: 8px;
+}
+
+nav ul li a:hover {
+    background-color: #c9ddb1;
+    border-radius: 10px;
+}
+
+nav ul li a img.nav-icon {
+    width: 70px;
+    height: 70px;
+    transition: width 0.3s, height 0.3s;
+}
+
+.menu-toggle:checked ~ .sidebar nav ul li a img.nav-icon {
+    width: 40px;
+    height: 40px;
+}
+
+nav ul li a span {
+    font-size: 22px;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.menu-toggle:checked ~ .sidebar nav ul li a span {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Logout Button */
+.logout {
+    background-color: #a4c639;
+    width: 200px;
+    height: 60px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, width 0.3s, height 0.3s;
+}
+
+.logout img.logout-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.logout:hover {
+    background-color: #8fb52b;
+}
+
+.menu-toggle:checked ~ .sidebar .logout {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.menu-toggle:checked ~ .sidebar .logout span.logout-text {
+    display: none;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+}
+
+.menu-toggle:checked ~ .main-content {
+    margin-left: 50px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-icon {
+    width: 30px;
+    height: auto;
+}
+
+/* Content Section */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+}
+
+.search-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.search-input {
+    width: 500px;
+    padding: 18px;
+    font-size: 22px;
+    border: 2px solid #c9ddb1;
+    border-radius: 12px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-button {
+    background-color: #a4c639;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button:hover {
+    background-color: #8fb52b;
+    transform: scale(1.1);
+}
+
+.search-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 80px;
+    border-radius: 35px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 900px; /* Ancho del card */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    gap: 40px;
+}
+
+.card-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.input-container {
+    background-color: #d7e6b0;
+    padding: 45px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar el input dentro del contenedor */
+    gap: 10px;
+    width: 85%; /* Ajusta el ancho del contenedor */
+}
+
+.input-field {
+    width: 100%;
+    padding: 18px;
+    font-size: 22px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+}
+
+.lightbulb-icon {
+    position: absolute;
+    bottom: -35px;
+    right: -35px;
+}
+
+.lightbulb-icon img {
+    width: 90px;
+    height: 90px;
+}
+
+.confirm-button {
+    background-color: #4CAF50; /* Verde atractivo */
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 20px; /* Espacio con respecto al contenido */
+    text-align: center;
+}
+
+.confirm-button:hover {
+    background-color: #45a049; /* Cambio de color en hover */
+    transform: scale(1.05); /* Efecto de crecimiento */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+.confirm-button:active {
+    transform: scale(0.95); /* Efecto de clic */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}

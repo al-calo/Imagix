@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +11,7 @@ body {
     display: flex;
     height: 100vh;
     background-color: #f7f9fc;
+    flex-direction: column;
 }
 
 .toggle-btn {
@@ -18,7 +21,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1100; 
+    z-index: 1100;
 }
 
 .sidebar {
@@ -35,19 +38,20 @@ body {
     top: 0;
     bottom: 0;
     z-index: 1000;
-    transform: translateX(0); 
 }
 
 .menu-toggle:checked ~ .sidebar {
-    width: 50px; /* Reducir el ancho del menú */
-    transform: translateX(0); 
+    width: 50px;
+    transform: translateX(0);
 }
 
-.menu-toggle:checked ~ .sidebar nav ul li a span {
-    display: none;
+.menu-toggle:checked ~ .sidebar nav ul li a span,
+.menu-toggle:checked ~ .sidebar .logout .logout-text {
+    display: none; 
 }
 
-.menu-toggle:checked ~ .sidebar nav ul li a img.nav-icon {
+.menu-toggle:checked ~ .sidebar nav ul li a img.nav-icon,
+.menu-toggle:checked ~ .sidebar .logout .logout-icon {
     margin-right: 0;
     margin-left: auto;
     margin-right: auto;
@@ -62,33 +66,34 @@ body {
 
 .logo img {
     width: 150px;
-    margin-top: 50px; 
+    margin-top: 50px;
 }
 
 .menu-toggle:checked ~ .sidebar .logo img {
-    display: none; 
+    display: none;
 }
-
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    width: 100%; 
+    width: 100%;
 }
 
 nav ul li {
     margin: 20px 0;
+    text-align: center;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #333;
     font-size: 18px;
+    font-weight: 500;
     display: flex;
     align-items: center;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    padding: 10px; 
+    justify-content: center;
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -102,30 +107,36 @@ nav ul li a img.nav-icon {
     margin-right: 15px;
 }
 
-
 .logout {
     background-color: #a4c639;
     padding: 12px 24px;
     border: none;
     border-radius: 25px;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout img.logout-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 .logout:hover {
     background-color: #8fb52b;
 }
 
-
 .menu-toggle:checked ~ .sidebar .logout {
-    width: 40px; 
+    width: 40px;
     padding: 10px;
 }
-
 
 .main-content {
     flex-grow: 1;
@@ -133,11 +144,13 @@ nav ul li a img.nav-icon {
     background-color: #f7f9fc;
     margin-left: 250px;
     transition: margin-left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente el contenido */
 }
 
-
 .menu-toggle:checked ~ .main-content {
-    margin-left: 50px; 
+    margin-left: 50px;
 }
 
 .toggle-btn {
@@ -154,10 +167,9 @@ nav ul li a img.nav-icon {
     height: auto;
 }
 
-
 .header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
@@ -166,10 +178,12 @@ nav ul li a img.nav-icon {
     border: 1px solid #ccc;
     border-radius: 25px;
     font-size: 16px;
-    width: 200px;
+    font-weight: 500;
+    width: 300px;
     background-color: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease;
+    text-align: center;
 }
 
 .filter:focus {
@@ -177,17 +191,22 @@ nav ul li a img.nav-icon {
 }
 
 .title {
-    font-size: 40px;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     color: #333;
     text-align: center;
     margin-bottom: 40px;
-    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .reto-card {
@@ -198,22 +217,36 @@ nav ul li a img.nav-icon {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 220px;
+    height: 250px;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .reto-card:hover {
     transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .reto-content {
     background-color: #f1f1f1;
     width: 100%;
-    height: 75%;
+    height: auto; /* Permitir que el contenido se ajuste al texto */
+    padding: 15px; /* Añadir algo de relleno interno */
     border-radius: 10px;
     margin-bottom: 15px;
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrar el texto dentro del contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+}
+
+.reto-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: #333;
 }
 
 .reto-options {
@@ -221,13 +254,19 @@ nav ul li a img.nav-icon {
     border-radius: 25px;
     border: 1px solid #ccc;
     font-size: 16px;
+    font-weight: 500;
     width: 100%;
     background-color: white;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.reto-options:hover {
+    background-color: #f0f8ff;
 }
 
 .reto-options:focus {
     outline: none;
     border-color: #7fbcff;
+    background-color: #e6f2ff;
 }

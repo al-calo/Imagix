@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +21,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1100; 
+    z-index: 1100;
 }
 
 .sidebar {
@@ -35,19 +38,21 @@ body {
     top: 0;
     bottom: 0;
     z-index: 1000;
-    transform: translateX(0); 
+    transform: translateX(0);
 }
 
 .menu-toggle:checked ~ .sidebar {
-    width: 50px; /* Reducir el ancho del menú */
-    transform: translateX(0); 
+    width: 50px;
+    transform: translateX(0);
 }
 
-.menu-toggle:checked ~ .sidebar nav ul li a span {
-    display: none;
+.menu-toggle:checked ~ .sidebar nav ul li a span,
+.menu-toggle:checked ~ .sidebar .logout .logout-text {
+    display: none; 
 }
 
-.menu-toggle:checked ~ .sidebar nav ul li a img.nav-icon {
+.menu-toggle:checked ~ .sidebar nav ul li a img.nav-icon,
+.menu-toggle:checked ~ .sidebar .logout .logout-icon {
     margin-right: 0;
     margin-left: auto;
     margin-right: auto;
@@ -62,18 +67,17 @@ body {
 
 .logo img {
     width: 150px;
-    margin-top: 50px; 
+    margin-top: 50px;
 }
 
 .menu-toggle:checked ~ .sidebar .logo img {
-    display: none; 
+    display: none;
 }
-
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    width: 100%; 
+    width: 100%;
 }
 
 nav ul li {
@@ -84,11 +88,11 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     font-size: 18px;
+    font-weight: 500;
     display: flex;
     align-items: center;
-    font-weight: bold;
+    padding: 10px;
     transition: color 0.3s ease;
-    padding: 10px; 
 }
 
 nav ul li a:hover {
@@ -102,30 +106,36 @@ nav ul li a img.nav-icon {
     margin-right: 15px;
 }
 
-
 .logout {
     background-color: #a4c639;
     padding: 12px 24px;
     border: none;
     border-radius: 25px;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout img.logout-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 .logout:hover {
     background-color: #8fb52b;
 }
 
-
 .menu-toggle:checked ~ .sidebar .logout {
-    width: 40px; 
+    width: 40px;
     padding: 10px;
 }
-
 
 .main-content {
     flex-grow: 1;
@@ -135,10 +145,10 @@ nav ul li a img.nav-icon {
     transition: margin-left 0.3s ease;
 }
 
-
 .menu-toggle:checked ~ .main-content {
-    margin-left: 50px; 
+    margin-left: 50px;
 }
+
 
 .toggle-btn {
     position: fixed;
@@ -154,7 +164,6 @@ nav ul li a img.nav-icon {
     height: auto;
 }
 
-
 .header {
     display: flex;
     justify-content: flex-end;
@@ -166,6 +175,7 @@ nav ul li a img.nav-icon {
     border: 1px solid #ccc;
     border-radius: 25px;
     font-size: 16px;
+    font-weight: 500;
     width: 200px;
     background-color: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -176,13 +186,16 @@ nav ul li a img.nav-icon {
     border-color: #7fbcff;
 }
 
+
 .title {
-    font-size: 40px;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     color: #333;
     text-align: center;
     margin-bottom: 40px;
-    font-weight: 500;
 }
+
 
 .grid-container {
     display: grid;
@@ -216,11 +229,21 @@ nav ul li a img.nav-icon {
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
+.reto-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: #333;
+}
+
 .reto-options {
     padding: 12px;
     border-radius: 25px;
     border: 1px solid #ccc;
     font-size: 16px;
+    font-weight: 500;
     width: 100%;
     background-color: white;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
