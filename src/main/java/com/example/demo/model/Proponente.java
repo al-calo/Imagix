@@ -11,12 +11,15 @@ public class Proponente {
 
     @Id
     @GeneratedValue
-    private Long id;
-    private String name;
-    private Long cedula;
-    private String email;
-    private String ciudad;
-    private String clave;
+    Long id;
+    Integer cedula;
+    String nombre;
+    String email;
+    String clave;
+    String ciudad;
+    Integer puntosAsignados;
+    Integer puntosRedimidos;
+    Integer puntosDisponibles;
 
     @ManyToOne
     @JoinColumn(name = "gerencia_id")
@@ -29,7 +32,7 @@ public class Proponente {
     @ManyToOne
     @JoinColumn(name = "cargo_id")
     private Cargo cargo;
-    private Long telefono;
+    private String telefono;
 
     @ManyToOne
     @JoinColumn(name = "idea_id")
@@ -38,40 +41,37 @@ public class Proponente {
     public Proponente() {
     }
 
-    public Proponente(String name, Long cedula, String email, String ciudad, Gerencia gerencia, Area area, Cargo cargo,
-            Long telefono) {
-        this.name = name;
+    public Proponente(Integer cedula, String nombre, String email, String ciudad,
+            Integer puntosAsignados, Integer puntosRedimidos, Integer puntosDisponibles, Gerencia gerencia, Area area,
+            Cargo cargo, String telefono, Idea idea) {
         this.cedula = cedula;
+        this.nombre = nombre;
         this.email = email;
         this.ciudad = ciudad;
+        this.puntosAsignados = puntosAsignados;
+        this.puntosRedimidos = puntosRedimidos;
+        this.puntosDisponibles = puntosDisponibles;
         this.gerencia = gerencia;
         this.area = area;
         this.cargo = cargo;
         this.telefono = telefono;
+        this.idea = idea;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Long getCedula() {
+    public Integer getCedula() {
         return cedula;
     }
 
-    public void setCedula(Long cedula) {
+    public void setCedula(Integer cedula) {
         this.cedula = cedula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getEmail() {
@@ -88,6 +88,30 @@ public class Proponente {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+
+    public Integer getPuntosAsignados() {
+        return puntosAsignados;
+    }
+
+    public void setPuntosAsignados(Integer puntosAsignados) {
+        this.puntosAsignados = puntosAsignados;
+    }
+
+    public Integer getPuntosRedimidos() {
+        return puntosRedimidos;
+    }
+
+    public void setPuntosRedimidos(Integer puntosRedimidos) {
+        this.puntosRedimidos = puntosRedimidos;
+    }
+
+    public Integer getPuntosDisponibles() {
+        return puntosDisponibles;
+    }
+
+    public void setPuntosDisponibles(Integer puntosDisponibles) {
+        this.puntosDisponibles = puntosDisponibles;
     }
 
     public Gerencia getGerencia() {
@@ -114,12 +138,20 @@ public class Proponente {
         this.cargo = cargo;
     }
 
-    public Long getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Long telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Idea getIdea() {
+        return idea;
+    }
+
+    public void setIdea(Idea idea) {
+        this.idea = idea;
     }
 
     public String getClave() {
