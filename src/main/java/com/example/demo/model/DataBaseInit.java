@@ -67,7 +67,7 @@ public class DataBaseInit implements ApplicationRunner {
                 promotor.setGerencia(gerencia);
                 promotor.setRegional(regional);
                 promotor.setCargo(cargo);
-                promotor.setCorreo(correo);
+                promotor.setEmail(correo);
                 promotor.setClave(generarClave()); // Asignar clave única
 
                 promotorRepository.save(promotor);

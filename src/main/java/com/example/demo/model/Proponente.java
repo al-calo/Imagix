@@ -16,6 +16,7 @@ public class Proponente {
     private Long cedula;
     private String email;
     private String ciudad;
+    private String clave;
 
     @ManyToOne
     @JoinColumn(name = "gerencia_id")
@@ -120,5 +121,15 @@ public class Proponente {
     public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+    
 
 }
